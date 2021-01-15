@@ -36,6 +36,12 @@ public class PartidaXadrez {
 		return jogadorAtual;
 	}
 	
+	public boolean getCheck() {
+		return check;
+	}
+	
+	
+	
 	public PeçaXadrez[][] getPeças(){
 		PeçaXadrez[][] mat = new PeçaXadrez[tabuleiro.getLinhas()][tabuleiro.getColunas()];
 		for (int i=0; i<tabuleiro.getLinhas(); i++) {
@@ -58,6 +64,14 @@ public class PartidaXadrez {
 		validarOrigemPosição(origem);
 		validarDestinoPosição(origem, destino);
 		Peça capituraPeça = fazerMover(origem, destino);
+		
+		if (testeCheck(jogadorAtual)) {
+			desfazerMover(origem, destino, capituraPeça);
+			throw new XadrezExceção("Você não pode se colocar em check");
+		}
+		
+		check = (testeCheck(oponente(jogadorAtual))) ? true : false;
+		
 		proximoTurno();
 		return (PeçaXadrez)capituraPeça;
 	}
@@ -122,6 +136,21 @@ public class PartidaXadrez {
 		}
 		throw new IllegalStateException("Não existe o rei da" + cor + "no tabuleiro");
 	}
+	
+	private boolean testeCheck(Cor cor) {
+		Posição reiPosição = rei(cor).getXadrezPosição().toPosição();
+		List<Peça> oponentePeças = peçaNoTabuleiro.stream().filter(x ->((PeçaXadrez)x).getCor() == oponente(cor)).collect(Collectors.toList());
+		for(Peça p : oponentePeças) {
+			boolean[][] mat = p.movimentoPossivel();
+			if (mat[reiPosição.getLinha()][reiPosição.getColuna()]) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	
+	
 	
 	private void colocarNovaPeça(char coluna, int linha, PeçaXadrez peça) {
 		tabuleiro.colocarPeça(peça, new XadrezPosição(coluna, linha).toPosição());
