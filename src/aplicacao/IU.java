@@ -60,12 +60,18 @@ public class IU {
 		printPeçasCapturadas(capiturada);
 		System.out.println();
 		System.out.println("Turno: " + partidaXadrez.getTurno());
-		System.out.println("Esperando o jogador: " + partidaXadrez.getJogadorAtual());
-		if(partidaXadrez.getCheck()) {
-			System.out.println("Partida em CHECK");
+		if(!partidaXadrez.getCheckMate()) {
+			System.out.println("Esperando o jogador: " + partidaXadrez.getJogadorAtual());
+			if(partidaXadrez.getCheck()) {
+				System.out.println("Partida em CHECK");
+			}
+		}
+		else {
+			System.out.println("CHECKMATE");
+			System.out.println("VENCEDOR:" + partidaXadrez.getJogadorAtual());
 		}
 	}
-	
+			
 	public static void printTabuleiro(PeçaXadrez[][] peças) {
 		for (int i = 0; i < peças.length; i++) {
 			System.out.print((8 - i) + " ");
