@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import tabuleiro.Peça;
 import tabuleiro.Posição;
 import tabuleiro.Tabuleiro;
+import xadrez.peças.Peao;
 import xadrez.peças.Rei;
 import xadrez.peças.Torre;
 
@@ -86,7 +87,8 @@ public class PartidaXadrez {
 	}
 	
 	private Peça fazerMover(Posição origem, Posição destino) {
-		Peça p = tabuleiro.removerPeça(origem);
+		PeçaXadrez p = (PeçaXadrez)tabuleiro.removerPeça(origem);
+		p.increContarMovimento();
 		Peça capituraPeça = tabuleiro.removerPeça(destino);
 		tabuleiro.colocarPeça(p, destino);
 		
@@ -98,7 +100,8 @@ public class PartidaXadrez {
 	}
 	
 	private void desfazerMover(Posição origem, Posição destino, Peça capituraPeça) {
-		Peça p = tabuleiro.removerPeça(destino);
+		PeçaXadrez p = (PeçaXadrez)tabuleiro.removerPeça(destino);
+		p.decreContarMovimento();
 		tabuleiro.colocarPeça(p,origem);
 		
 		if (capituraPeça != null) {
@@ -194,12 +197,30 @@ public class PartidaXadrez {
 	private void iniciarPartida() {
 		
 		
-		colocarNovaPeça('h', 7, new Torre(tabuleiro, Cor.Branca));
-		colocarNovaPeça('d', 1, new Torre(tabuleiro, Cor.Branca));
+		colocarNovaPeça('a', 1, new Torre(tabuleiro, Cor.Branca));
 		colocarNovaPeça('e', 1, new Rei(tabuleiro, Cor.Branca));
+		colocarNovaPeça('h', 1, new Torre(tabuleiro, Cor.Branca));
+		colocarNovaPeça('a', 2, new Peao(tabuleiro, Cor.Branca));
+		colocarNovaPeça('b', 2, new Peao(tabuleiro, Cor.Branca));
+		colocarNovaPeça('c', 2, new Peao(tabuleiro, Cor.Branca));
+		colocarNovaPeça('d', 2, new Peao(tabuleiro, Cor.Branca));
+		colocarNovaPeça('e', 2, new Peao(tabuleiro, Cor.Branca));
+		colocarNovaPeça('f', 2, new Peao(tabuleiro, Cor.Branca));
+		colocarNovaPeça('g', 2, new Peao(tabuleiro, Cor.Branca));
+		colocarNovaPeça('h', 2, new Peao(tabuleiro, Cor.Branca));
+		
 
-		colocarNovaPeça('b', 8, new Torre(tabuleiro, Cor.Preta));
-		colocarNovaPeça('a', 8, new Rei(tabuleiro, Cor.Preta));
+		colocarNovaPeça('a', 8, new Torre(tabuleiro, Cor.Preta));
+		colocarNovaPeça('e', 8, new Rei(tabuleiro, Cor.Preta));
+		colocarNovaPeça('h', 8, new Torre(tabuleiro, Cor.Preta));
+		colocarNovaPeça('a', 7, new Peao(tabuleiro, Cor.Preta));
+		colocarNovaPeça('b', 7, new Peao(tabuleiro, Cor.Preta));
+		colocarNovaPeça('c', 7, new Peao(tabuleiro, Cor.Preta));
+		colocarNovaPeça('d', 7, new Peao(tabuleiro, Cor.Preta));
+		colocarNovaPeça('e', 7, new Peao(tabuleiro, Cor.Preta));
+		colocarNovaPeça('f', 7, new Peao(tabuleiro, Cor.Preta));
+		colocarNovaPeça('g', 7, new Peao(tabuleiro, Cor.Preta));
+		colocarNovaPeça('h', 7, new Peao(tabuleiro, Cor.Preta));
 	}
 
 }
