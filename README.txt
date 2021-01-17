@@ -4,13 +4,13 @@ Nas aulas foram abordados os temas classe, objeto, herança, encapsulamento, poli
 como também foram realizados exercicios para a prática do conteudo ministado nas aulas.
 	Como parte final de avaliação foi proposto o desenvolmento de um projeto que contemple todo o conteúdo repassado 
 referênte a programação orientada a obejto.
-	Assim, resolvir criar a mecânica geral de um jogo de xadrez, levando em consideração meu recente interesse pela prática,
-achei uma boa ideia, já que iria unir o util ao agradável.
+	Assim, resolvir criar a mecânica geral de um jogo de xadrez, levando em consideração meu recente interesse pela 
+prática, achei uma boa ideia, já que iria unir o util ao agradável.
 	É um jogo simples, que pode ser jogado atraves de um terminal. Com o projeto pude aprender mais sobre origentação
 a objeto usando java, boas práticas de programação, tratamento de erro, versionamento de código, correção de bugs e 
 logíca de programação.
-	O código e os commit foram desenvolvios em português, o que em certo ponto passou a ser uma dificuldade devido na lingua 
-portuguêsa as palavras serem muito extensas.
+	O código e os commit foram desenvolvios em português, o que em certo ponto passou a ser uma dificuldade devido na 
+lingua portuguêsa as palavras serem muito extensas.
 	Levei alguns dias para terminar o projeto, ainda mais porque tive um problema no meu primeiro repositório, comecei o 
 projeto usando um notebook, quando fui baixar do github para um outro computador, os arquivos não vinham. Então criei um outro
 repositôrio e tive que recomeçar a partir dele, porém aproveitando os códigos já escritos anteriormente. Abaixo segue o
