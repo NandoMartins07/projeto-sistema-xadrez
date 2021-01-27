@@ -2,7 +2,7 @@
 de obter os conhecimentos inicias sobre o assunto atraves das aulas a distância ministaradas pelo professor Gustavo Pinto.
 Nas aulas foram abordados os temas classe, objeto, herança, encapsulamento, polimorfismo, coleções e tramento de exceções,
 como também foram realizados exercicios para a prática do conteudo ministado nas aulas.
-	Como parte final de avaliação foi proposto o desenvolmento de um projeto que contemple todo o conteúdo repassado 
+	Como parte final da avaliação foi proposto o desenvolvimento de um projeto que contempla todo o conteúdo repassado 
 referênte a programação orientada a obejto.
 	Assim, resolvir criar a mecânica geral de um jogo de xadrez, levando em consideração meu recente interesse pela 
 prática, achei uma boa ideia, já que iria unir o util ao agradável.
@@ -25,7 +25,7 @@ mesmas em português, apenas a rainha foi denominada de Dama(D) devido a letra R 
 Peças:
 Peão 	--> P
 Torre 	--> T
-Cavalao --> C
+Cavalo  --> C
 Bispo 	--> B
 Dama 	--> D
 Rei 	--> R
@@ -35,7 +35,7 @@ Como as IDEs possuem fundo preto, as peças pretas foram representadas pela cor a
 utilizar o terminal do git bash que possui uma interface colorida e poderá ver as peças de amarelo e as casas de possivel
 movimento das peças. Também quando uma peça é captura, é possivel vê-la abaixo do tabuleiro em "Pecas capturadas".
 
-Para iniciar o jogo é necessario ir até a pasta/repositorio e executar o terminal do git bash no pasta .bin
+Para iniciar o jogo é necessario ir até a pasta/repositorio e executar o terminal do git bash na pasta .bin
 (...\projeto-sistema-xadrez\bin). Com o terminal aberto deve digitar o seguinte comando: java aplicacao/programa.
 
 Explicando a interface:
@@ -44,7 +44,7 @@ Explicando a interface:
 * Turno: exibe o turno ou rodada em que o jogo está, somando os dois jogadores.
 * Esperando o jogador (Branca/Preta) : exibe qual é o jogador a mover a peça naquele turno.
 * Origem: peça que deseja mover, escrita em coordenadas.
-* Destino: local no qual o jogador irá mover a peça, escrita em coordenada.
+* Destino: local no qual o jogador deseja colocar a peça, escrita em coordenada.
 * Check: aparece quando coloca um dos reis em cheque.
 * CheckMate: o rei ficou sem possibilidade de movimento, fim do jogo.
 
